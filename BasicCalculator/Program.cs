@@ -53,7 +53,7 @@ namespace FirstProject
         public static double output_1 = 0;
         public static double output_2 = 0;
         public static Calculator calc = new();
-        static void Duplicates_1()
+        static void Duplicates()
         {           
             Console.Clear();
             Console.WriteLine("Enter your first number");            
@@ -73,30 +73,11 @@ namespace FirstProject
                 val_2 = Console.ReadLine();
             }            
         }
-        static void Duplicates_2()
-        {
-            Console.Clear();
-            Console.WriteLine("Enter your first number");
-            string val_1 = Console.ReadLine();
-            while (!double.TryParse(val_1, out output_1))
-            {
-                Console.WriteLine("Enter a valid number");
-                val_1 = Console.ReadLine();
-            }
-            Console.WriteLine("Enter your second number");
-
-
-            string val_2 = Console.ReadLine();
-            while (!double.TryParse(val_2, out output_2))
-            {
-                Console.WriteLine("Enter a valid number");
-                val_2 = Console.ReadLine();
-            }
-        }
+       
 
         private static string Addition()
         {
-            Duplicates_1();
+            Duplicates();
             double[] array = new double[2] { output_1, output_2 };
             Console.WriteLine($"Result: {calc.Add(array)}");
             Console.Write("\r\nPress Enter to return to Main Menu");
@@ -104,7 +85,7 @@ namespace FirstProject
         }
         private static string Subtraction()
         {
-            Duplicates_1();
+            Duplicates();
             double[] array = new double[2] { output_1, output_2 };
             Console.WriteLine($"Result: {calc.Subtract(array)}");
             Console.Write("\r\nPress Enter to return to Main Menu");
@@ -112,14 +93,14 @@ namespace FirstProject
         }
         private static string Multipliaction()
         {
-            Duplicates_2();
+            Duplicates();
             Console.WriteLine($"Result: {calc.Multiply(output_1, output_2)}");
             Console.Write("\r\nPress Enter to return to Main Menu");
             return Console.ReadLine();
         }
         private static string Division()
         {
-            Duplicates_2();
+            Duplicates();
             if (output_2 != 0) 
             {
                 Console.WriteLine($"Result: {calc.Divide(output_1, output_2)}");
